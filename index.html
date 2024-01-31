@@ -6,48 +6,75 @@
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
 
+        <!-- icon icon  -->
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- javascript for menu   -->
+        <script>
+            function menuBtn(e){
+                let list = document.querySelector("#headerMenu");
+                e.name==="menu" ? (e.name="close", list.classList.add('top-[80px]'), list.classList.add('opacity-100')) : (e.name="menu", list.classList.add('top-[80px]'), list.classList.remove('opacity-100'))
+                
+            }
+        </script>
+
 </head>
 <body>
-<header class="bg-gradient-to-r from-[#e2ecec]  from-20%  to-[#e4e2e9] pb-44">
+
+<header class="bg-gradient-to-r from-[#e2ecec]  from-20%  to-[#e4e2e9] md:pb-44">
 
     <div class="container mx-auto ">
+
     <!-- navber section  -->
-        <div class="navbar bg-transparent py-3">
-            <div class="navbar-start">
-              <div class="dropdown">
-                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                </div>
-                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-nunito text-[#282C2E] text-sm font-semibold">
-                    <li><a>Why Us</a></li>
-                    <li><a>How it Works</a></li>
-                    <li><a>Features</a></li>
-                    <li><a>Image Compare</a></li>
-                    <li><a>Pricing</a></li>
-                    <li><a>Contact Us</a></li>
-                </ul>
-              </div>
-              <a> 
-                <img class="w-16" src="./img/Group.png" alt="">
-              </a>
-            </div>
-            <div class="navbar-end hidden lg:flex">
-                <ul class="menu menu-horizontal px-1 font-nunito text-[#282C2E] text-sm font-semibold">
-                    <li><a>Why Us</a></li>
-                    <li><a>How it Works</a></li>
-                    <li><a>Features</a></li>
-                    <li><a>Image Compare</a></li>
-                    <li><a>Pricing</a></li>
-                    <li><a>Contact Us</a></li>
-                  </ul>
-            </div>
-          </div> 
+ 
+    <nav class="p-5  bg-transparent  md:flex md:items-center md:justify-between">
+        <div class="flex justify-between items-center">
+       
+            <span class="text-2xl">
+                <img class="h-10 inline cursor-pointer" src="img/Group.png" alt="">
+            </span>
+
+            <span class="text-3xl cursor-pointer md:hidden block mx-2">
+                <ion-icon name="menu-outline" onclick="menuBtn(this)"></ion-icon>
+
+            </span>
+
+        </div>
+        <ul id="headerMenu" class="md:flex md:items-center z-[-1] md:z-auto md:static absolute  w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+            <li class="mx-4 my-6 md:my-0">
+                <a href="#" class="text-xl hover:text-cyan-500 duration-500">Why Us</a>
+            </li>
+            <li  class="mx-4 my-6 md:my-0">
+                <a href="#" class="text-xl hover:text-cyan-500 duration-500">How it Works</a>
+            </li>
+            <li class="mx-4 my-6 md:my-0">
+         
+                <a href="#" class="text-xl hover:text-cyan-500 duration-500">Features</a>
+            </li>
+            <li class="mx-4 my-6 md:my-0">
+                <a href="#" class="text-xl hover:text-cyan-500 duration-500">Image Compare</a>
+            </li>
+            <li class="mx-4 my-6 md:my-0">
+                <a href="#" class="text-xl hover:text-cyan-500 duration-500">Pricing</a>
+            </li>
+            <li class="mx-4 my-6 md:my-0">
+                <a href="#" class="text-xl hover:text-cyan-500 duration-500">Contact Us</a>
+            </li>
+         
+        </ul>
+
+    </nav>
+
+
+    <!-- navbar end -->
+
     <!-- hero section  -->
-       <div class="flex justify-between py-6">
+       <div class="container mx-auto flex flex-col md:flex-row justify-between py-6 md:px-[0%] px-[4%] ">
             <!-- hero section  left-->
-            <div class="w-2/4">
-                <h2 class="text-[#282C2E] font-nunito font-bold text-6xl">SiteWatcher - Your Website's Reliable Monitoring Tool</h2>
-                <p class="text-lg font-light py-6 pr-36 text-justify">SiteWatcher will automatically scan your website after each plugin, theme and WordPress update. So you can keep a close eye on your website's well-being. It offers essential insights and alerts about changes and the overall health of your website.</p>
+            <div class=" w-full md:w-2/4">
+                <h2 class="text-[#282C2E] font-nunito font-bold text-4xl md:text-6xl">SiteWatcher - Your Website's Reliable Monitoring Tool</h2>
+                <p class="text-lg font-light py-6 pr-0 md:pr-36 text-justify">SiteWatcher will automatically scan your website after each plugin, theme and WordPress update. So you can keep a close eye on your website's well-being. It offers essential insights and alerts about changes and the overall health of your website.</p>
                 <div class="relative w-9/12">
                     <input class="p-4 w-full rounded-2xl outline-none" type="text" placeholder="Enter your domain">
                     <button class="px-4 py-3 bg-gradient-to-r from-[#9F5AFF]  from-20%  to-[#569EFF] rounded-2xl text-white font-nunito text-xs absolute right-2 top-2 font-medium">Get Started Now</button>
@@ -55,10 +82,10 @@
             </div>
 
          <!-- hero section  right-->
-            <div class="w-2/4">
+            <div class="w-full md:w-2/4">
                 <!-- hero section one-->
-                <div class=" w-9/12 flex bg-white p-4 rounded-md font-nunito relative right-16 shadow-sm">
-                    <div class=" mr-4">
+                <div class="w-full md:w-9/12 flex bg-white p-4 rounded-md font-nunito md:relative mt-5 md:mt-0 md:right-16 shadow-sm">
+                    <div class="mr-4">
                         <img src="./img/Group 23 1.png" alt="">
                     </div>
                     <div class="">
@@ -69,7 +96,7 @@
 
           <!-- hero  section two-->
                 <div class="relative">
-                    <div class="py-4 font-nunito">
+                    <div class=" py-4 font-nunito">
                         <div class=" w-full bg-[#ffffffdc] px-4 pt-4 pb-16 rounded-md font-nunito">
                             <div class="flex items-center">
                                 <img class="" src="./img/mdi_alert.svg" alt="">
@@ -128,7 +155,7 @@
                         </div>
                     </div>
                     <!-- position card   -->
-                    <div class=" w-5/12 bg-white p-4 rounded-md absolute right-[-60px] bottom-[-130px] shadow-md">
+                    <div class="hidden md:block w-5/12 bg-white p-4 rounded-md absolute right-[-60px] bottom-[-130px] shadow-md">
                         <div class="flex justify-between items-center">
                             <div class="flex items-center">
                                 <img class="" src="./img/Frame.svg" alt="">
@@ -160,35 +187,37 @@
                 <h2 class=" text-[#282C2E] text-5xl font-bold">Why Choose SiteWatcher?</h2>
             </div>
     
-            <div class=" grid grid-cols-4 gap-4 py-10">
+            <div class="grid grid-col md:grid-cols-4 gap-4 py-10 px-[4%] md:[px-0]">
+
+                <div class="p-4 rounded shadow w-full text-center md:text-left ">
+                    <div class="mb-2 ">
+                        <img class="bg-[#9548FF] p-2 rounded-full  mx-auto md:mx-0 " src="./img/Frame (1).svg" alt="">
+                    </div>
+                    <h4 class="text-[#282C2E] font-bold text-lg py-2">Peace of Mind</h4>
+                    <p class="text-[#282C2E] font-light text-base">SiteWatcher offers constant oversight, giving you confidence that your website is in good condition.</p>
+                </div>
+
+
     
-                <div class="p-4 rounded shadow w-full">
+                <div class="p-4 rounded shadow w-full text-center md:text-left">
                     <div class="mb-2">
-                        <img class="bg-[#9548FF] p-2 rounded-full" src="./img/Frame (1).svg" alt="">
+                        <img class="bg-[#9548FF] p-2 rounded-full  mx-auto md:mx-0 " src="./img/Frame (1).svg" alt="">
                     </div>
                     <h4 class="text-[#282C2E] font-bold text-lg py-2">Peace of Mind</h4>
                     <p class="text-[#282C2E] font-light text-base">SiteWatcher offers constant oversight, giving you confidence that your website is in good condition.</p>
                 </div>
     
-                <div class="p-4 rounded shadow w-full">
+                <div class="p-4 rounded shadow w-full text-center md:text-left">
                     <div class="mb-2">
-                        <img class="bg-[#9548FF] p-2 rounded-full" src="./img/Frame (1).svg" alt="">
+                        <img class="bg-[#9548FF] p-2 rounded-full  mx-auto md:mx-0 " src="./img/Frame (1).svg" alt="">
                     </div>
                     <h4 class="text-[#282C2E] font-bold text-lg py-2">Peace of Mind</h4>
                     <p class="text-[#282C2E] font-light text-base">SiteWatcher offers constant oversight, giving you confidence that your website is in good condition.</p>
                 </div>
     
-                <div class="p-4 rounded shadow w-full">
+                <div class="p-4 rounded shadow w-full text-center md:text-left">
                     <div class="mb-2">
-                        <img class="bg-[#9548FF] p-2 rounded-full" src="./img/Frame (1).svg" alt="">
-                    </div>
-                    <h4 class="text-[#282C2E] font-bold text-lg py-2">Peace of Mind</h4>
-                    <p class="text-[#282C2E] font-light text-base">SiteWatcher offers constant oversight, giving you confidence that your website is in good condition.</p>
-                </div>
-    
-                <div class="p-4 rounded shadow w-full">
-                    <div class="mb-2">
-                        <img class="bg-[#9548FF] p-2 rounded-full" src="./img/Frame (1).svg" alt="">
+                        <img class="bg-[#9548FF] p-2 rounded-full  mx-auto md:mx-0 " src="./img/Frame (1).svg" alt="">
                     </div>
                     <h4 class="text-[#282C2E] font-bold text-lg py-2">Peace of Mind</h4>
                     <p class="text-[#282C2E] font-light text-base">SiteWatcher offers constant oversight, giving you confidence that your website is in good condition.</p>
@@ -196,7 +225,7 @@
     
             </div>
     
-            <div class="mx-auto w-6/12 py-1">
+            <div class="mx-auto w-10/12 md:w-6/12 py-1">
                 <p class="text-[#282C2E] font-light text-base text-center">Don't leave your website's health to chance. Try SiteWatcher today and ensure your online presence remains in optimal condition.</p>
             </div>
         </div>
@@ -205,17 +234,17 @@
 
     <!-- How it Works section  -->
     <div class="">
-        <div class="font-nunito container mx-auto py-6">
+        <div class="font-nunito container mx-auto py-6 px-[4%] md:px-[0%]">
             <h2 class="text-[#9548FF] font-semibold text-base py-2">How it Works</h2>
-            <div class="flex justify-between mb-11">
+            <div class="flex flex-col md:flex-row justify-between mb-11">
                 <!-- section left -->
-                <div class="w-6/12">
-                    <h2 class="font-bold text-[#282C2E] text-5xl mb-9">Our vigilant system tracks changes non-stop</h2>
+                <div class=" w-full  md:w-6/12">
+                    <h2 class="font-bold text-[#282C2E] text-3xl md:text-5xl mb-9">Our vigilant system tracks changes non-stop</h2>
      
                     <!-- card one  -->
-                    <div class="pr-[20%]">
+                    <div class="md:pr-[20%]">
                         <div class="w-full flex justify-end">
-                            <div class=" w-6/12 p-4 flex items-center bg-white  shadow-md  rounded-md">
+                            <div class=" w-full md:w-6/12 p-4 flex items-center bg-white  shadow-md  rounded-md">
                                 <div class="mr-3 p-2 bg-[#FFE0E0] rounded-full">
                                     <img src="./img/solar_danger-bold.svg" alt="">
                                 </div>
@@ -229,7 +258,7 @@
     
                      <!-- card two  -->
                      <div class="py-6 ">
-                        <div class="w-8/12 py-6 shadow-md bg-white rounded-md">
+                        <div class="w-full md:w-8/12 py-6 shadow-md bg-white rounded-md">
                             <div class="flex items-center px-6 pb-3">
                                 <div class="mr-3">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
@@ -280,8 +309,8 @@
                 </div>
             </div>
                 <!-- section right -->
-                <div class="w-6/12">
-                    <p class=" text-[#282C2E] font-light text-lg mb-3">Our vigilant system maintains round-the-clock vigilance, meticulously tracking every alteration and update.</p>
+                <div class="w-full md:w-6/12">
+                    <p class=" text-center md:text-left text-[#282C2E] font-light text-lg mb-3">Our vigilant system maintains round-the-clock vigilance, meticulously tracking every alteration and update.</p>
                     <div class="py-4 mt-11 flex">
                         <div class="mr-3">
                             <span class="px-3 py-1 rounded-full bg-[#9548FF] text-white ">1</span>
@@ -309,21 +338,21 @@
 
     <!-- feature section   -->
 
-    <div class="bg-gradient-to-r from-[#e2ecec]  from-20%  to-[#e4e2e9] py-10">
+    <div class="bg-gradient-to-r from-[#e2ecec]  from-20%  to-[#e4e2e9] py-10  px-[4%]">
         <div class="container mx-auto font-nunito">
-            <div class="py-4 px-[25%] text-center">
+            <div class="py-4 md:px-[25%] text-center">
                 <p class="text-[#9548FF] py-1 font-semibold text-base">Our Feature</p>
                 <h2 class="text-[#282C2E] font-bold text-4xl">Exploring Our Features for Boundless Satisfaction</h2>
                 <h4 class="text-[#282C2E] font-light text-base mt-3">Discover our array of features designed to deliver limitless satisfaction and enhance your experience.</h4>
             </div>
             <!-- section container -->
-            <div class="flex gap-6">
+            <div class="flex flex-col md:flex-row gap-6">
                 <!-- left section -->
-                <div class="w-6/12">
+                <div class="w-full md:w-6/12">
 
                     <div class="mr-[2%] pb-4">
                         <div class="flex justify-between items-center">
-                            <div class="flex items-center">
+                            <div class="flex items-center mt-4 md:mt-0">
                                 <div class="mr-3 ">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3788 3.33594C8.2542 3.33594 6.47641 4.09262 5.23301 5.4262C3.99443 6.75462 3.33496 8.60222 3.33496 10.7041V11.6589H28.667V10.7041C28.667 8.60314 28.0114 6.75544 26.7743 5.42659C25.5323 4.09235 23.7544 3.33594 21.6244 3.33594H10.3788ZM8.38704 7.73698C7.83476 7.73698 7.38704 8.1847 7.38704 8.73698C7.38704 9.28926 7.83476 9.73698 8.38704 9.73698H8.46099C9.01327 9.73698 9.46099 9.28926 9.46099 8.73698C9.46099 8.1847 9.01327 7.73698 8.46099 7.73698H8.38704ZM11.7011 7.73698C11.1488 7.73698 10.7011 8.1847 10.7011 8.73698C10.7011 9.28926 11.1488 9.73698 11.7011 9.73698H11.775C12.3273 9.73698 12.775 9.28926 12.775 8.73698C12.775 8.1847 12.3273 7.73698 11.775 7.73698H11.7011ZM15.0163 7.73698C14.464 7.73698 14.0163 8.1847 14.0163 8.73698C14.0163 9.28926 14.464 9.73698 15.0163 9.73698H15.0903C15.6426 9.73698 16.0903 9.28926 16.0903 8.73698C16.0903 8.1847 15.6426 7.73698 15.0903 7.73698H15.0163Z" fill="#9548FF"/>
@@ -514,7 +543,7 @@
                 </div>
 
                 <!-- right section -->
-                <div class="w-6/12">
+                <div class="w-full md:w-6/12">
                     <!-- card one -->
                     <div class="bg-white rounded-md p-4">
                         <div class="flex justify-between">
@@ -622,9 +651,9 @@
     </div>
 
     <!-- Pricing -->
-    <div class="py-24">
+    <div class="md:py-24 px-[4%] md-[0%]">
         <div class="container mx-auto font-nunito">
-            <div  class="px-[25%] text-center">
+            <div  class="md:px-[25%] text-center">
                 <p class="text-[#9548FF] font-medium text-base">Pricing</p>
                 <h3 class="font-bold text-4xl text-[#282C2E] py-3">Exploring Our Features for Boundless Satisfaction</h3>
                 <h4 class="text-[#282C2E] font-light text-base px-20">Discover our array of features designed to deliver limitless satisfaction and enhance your experience.</h4>
@@ -634,7 +663,7 @@
                 </div>
             </div>
             <!-- card container  -->
-            <div class=" grid grid-cols-2 gap-6 py-6">
+            <div class=" grid grid-col md:grid-cols-2 gap-6 py-6">
                 
                 <!-- card - one -->
                 <div class="p-4 w-full shadow-md rounded-lg">
@@ -642,7 +671,7 @@
                     <h4 class="font-bold text-2xl py-3">Starter Plan: Begin Your Journey</h4>
 
                     <div class=" flex py-2">
-                        <div class="m-4">
+                        <div class="mr-4">
                             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M14 24.5C15.3789 24.5 16.7443 24.2284 18.0182 23.7007C19.2921 23.1731 20.4496 22.3996 21.4246 21.4246C22.3996 20.4496 23.1731 19.2921 23.7007 18.0182C24.2284 16.7443 24.5 15.3789 24.5 14C24.5 12.6211 24.2284 11.2557 23.7007 9.98182C23.1731 8.70791 22.3996 7.55039 21.4246 6.57538C20.4496 5.60036 19.2921 4.82694 18.0182 4.29926C16.7443 3.77159 15.3789 3.5 14 3.5C11.2152 3.5 8.54451 4.60625 6.57538 6.57538C4.60625 8.54451 3.5 11.2152 3.5 14C3.5 16.7848 4.60625 19.4555 6.57538 21.4246C8.54451 23.3938 11.2152 24.5 14 24.5ZM13.7293 18.2467L19.5627 11.2467L17.7707 9.75333L12.754 15.7722L10.1582 13.1752L8.5085 14.8248L12.0085 18.3248L12.9115 19.2278L13.7293 18.2467Z" fill="#44B964"/>
                             </svg>
@@ -825,22 +854,22 @@
     </div>
 
     <!-- Contact section   -->
-    <div class="bg-gradient-to-r from-[#e2ecec]  from-20%  to-[#e4e2e9]] font-nunito">
+    <div class="bg-gradient-to-r from-[#e2ecec]  from-20%  to-[#e4e2e9]] font-nunito px-[4%] md:px-[0%]">
         <div class="container mx-auto bg-[url(img/vector.png)] bg-no-repeat bg-cover bg-center py-16">
 
-            <div class="flex justify-between items-start">
-                <div class="W-3/12">
+            <div class="flex flex-col md:flex-row justify-between items-start">
+                <div class=" w-full md:W-3/12 px-[15%]">
                     <img class="max-w-full w-full" src="./img/ellipse10.svg" alt="">
                     
                 </div>
-                <div class="W-6/12 text-center space-y-3 px-[5%]">
-                    <h2 class="font-bold text-5xl text-[#282C2E] py-6">Reach Out and Connect with Us - Your Questions, Our Expertise!</h2>
-                    <h4 class="px-[20%] pb-6">Get in touch with our dedicated team! Whether it's a query, feedback, or assistance you seek, we're here to lend a helping hand.</h4>
+                <div class="w-full md:W-6/12 text-center space-y-3 px-[5%]">
+                    <h2 class="font-bold text-2xl md:text-5xl text-[#282C2E] py-6">Reach Out and Connect with Us - Your Questions, Our Expertise!</h2>
+                    <h4 class=" md:px-[20%] pb-6">Get in touch with our dedicated team! Whether it's a query, feedback, or assistance you seek, we're here to lend a helping hand.</h4>
                     <div>
                         <button class="bg-[#9548FF]  text-white shadow-md rounded-full py-2 px-9">Contact Us</button>
                     </div>
                 </div>
-                <div class="3/12">
+                <div class="w-full md:3/12 hidden md:block">
                     <img src="./img/ellipse11.svg" alt="">
                 </div>
             </div>
@@ -852,26 +881,33 @@
 
 </main>
 <footer class="bg-[#24272F]">
-    <div class="footer py-10 container mx-auto text-white">
-        <nav>
-            <h6 class="footer-title">Services</h6> 
-            <a class="link link-hover">Branding</a>
-            <a class="link link-hover">Design</a>
-            <a class="link link-hover">Marketing</a>
-            <a class="link link-hover">Advertisement</a>
-          </nav> 
-          <nav>
+    <div class="footer py-10 container mx-auto text-white px-[4%] md:px-[0%]">
+        <nav class="w-full">
+            <h6 class="footer-title text-center ">Services</h6> 
+            <div class="w-full flex justify-evenly">
+                <a class="link link-hover">Branding</a>
+                <a class="link link-hover">Design</a>
+                <a class="link link-hover">Marketing</a>
+                <a class="link link-hover">Advertisement</a>
+            </div>
+
+          </nav > 
+          <nav class="w-full">
             <h6 class="footer-title">Company</h6> 
-            <a class="link link-hover">About us</a>
-            <a class="link link-hover">Contact</a>
-            <a class="link link-hover">Jobs</a>
-            <a class="link link-hover">Press kit</a>
+                <div class="w-full flex justify-evenly">
+                    <a class="link link-hover">About us</a>
+                    <a class="link link-hover">Contact</a>
+                    <a class="link link-hover">Jobs</a>
+                    <a class="link link-hover">Press kit</a>
+                </div>
           </nav> 
-          <nav>
-            <h6 class="footer-title">Legal</h6> 
-            <a class="link link-hover">Terms of use</a>
-            <a class="link link-hover">Privacy policy</a>
-            <a class="link link-hover">Cookie policy</a>
+          <nav class="w-full">
+            <h6 class="footer-title text-center">Legal</h6> 
+                <div class="w-full flex justify-evenly">
+                    <a class="link link-hover">Terms of use</a>
+                    <a class="link link-hover">Privacy policy</a>
+                    <a class="link link-hover">Cookie policy</a>
+                </div>
           </nav> 
           <form>
             <h6 class="footer-title">Newsletter</h6> 
@@ -889,6 +925,8 @@
 
     
   </footer>
+
+
 
 </body>
 </html>
